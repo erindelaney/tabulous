@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="extension" content="random">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id=all>
+
+
+
+<div id="textArea">
+<h1 id="firstText">Hello World</h1>
+<!-- <h1 id="secondText">Rage</h1> -->
+</div>
+
+
+
+<script type="text/javascript">
+//Creating Time Variables
+  var today = new Date();
+  var hour = today.getHours();
+  var min = today.getMinutes();
+  var totalTime = hour*100 + min;
+
+
+//Creating Color Variables
+  var opacity = totalTime/2360;
+
+  var overlayColor = "rgba(173, 138, 160, " + opacity + ")";
+  var baseColor = "rgba(232, 184, 138, 1)";
+
+
+//Setting background colors
+  document.body.style.backgroundColor = baseColor;
+
+  var divBackground = document.querySelector("all");
+  textArea.style.backgroundColor = overlayColor;
+
+
+//Setting text colors
+  var firstTextBlock = document.querySelector("#firstText");
+  firstTextBlock.style.color = 'white';
+
+  var secondTextBlock = document.querySelector("#secondText");
+  secondTextBlock.style.color = 'white';
+
+//Building text array
+
+  var textArray = [
+    'Go get em',
+    'niiiiice'
+  ];
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
