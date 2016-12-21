@@ -2,11 +2,18 @@
     "manifest_version": 2,
     "name": "Tabulous",
     "version": "1.0",
-    "options_page": "options.html",
+    "permissions": [
+          "storage"
+        ],
     "icons": { "16": "icon16.png",
                "48": "icon48.png",
               "128": "icon128.png" },
     "chrome_url_overrides" : {
         "newtab": "index.html"
-    }
+    },
+    "options_ui": {
+    "page": "options.html",
+    "chrome_style": false,
+    "open_in_tab": true
+  }
 }
