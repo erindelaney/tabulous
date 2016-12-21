@@ -12,13 +12,15 @@
   var overlayColor = "rgba(173, 138, 160, " + opacity + ")";
   var baseColor = "rgba(232, 184, 138, 1)";
 
+  var startTime
+  var endTime
 
 // COLOR ACTIONS
 
 //Setting background colors
   document.body.style.backgroundColor = baseColor;
 
-  var divBackground = document.querySelector("all");
+  var divBackground = document.querySelector("#all");
   textArea.style.backgroundColor = overlayColor;
 
 
