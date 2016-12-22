@@ -11,6 +11,8 @@
   var endTime = 2360;
 
 //Color Variables
+  var opacity = 0;
+
   if (currentTime < startTime){
     var opacity = 0;
   } else if (currentTime < endTime){
@@ -18,6 +20,8 @@
   } else {
     opacity = 1;
   }
+
+
 
   var overlayColor = "rgba(173, 138, 160, " + opacity + ")";
   var baseColor = "rgba(232, 184, 138, 1)";
@@ -36,9 +40,10 @@
 //Building text array
 
   var firstPhraseArray = [
-    'killin it',
+    'u killin it',
     'slay slay slay slay',
-    'hello world'
+    'h e l l o   w o r l d',
+    '<(^.^<)'
   ];
 
   var firstPhrase = firstPhraseArray[Math.floor(Math.random() * firstPhraseArray.length)];
