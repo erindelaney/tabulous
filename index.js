@@ -18,20 +18,20 @@ function onGetValuesFromStorage(values){
   var opacity = 0;
 
   if (currentTime < startTime){
-    var opacity = 0;
+    opacity = 0;
   } else if (currentTime < endTime){
     opacity = (currentTime-startTime)/(endTime-startTime);
   } else {
     opacity = 1;
   }
 
+
   var baseColor = values.baseColor || "rgba(232, 184, 138, 1)";
-  console.log(values.overlayColor);
   var overlayColor = values.overlayColor || "rgba(173, 138, 160, 1)";
 
-  //var overlayColor = "rgba(173, 138, 160, " + opacity + ")";
-
-
+  var arr = overlayColor.split(',');
+  arr[3] = " " + opacity + ")";
+  overlayColor = arr.join(',');
 
 
   //Setting background colors
@@ -60,15 +60,16 @@ function onGetValuesFromStorage(values){
     firstTextBlock.innerHTML = firstPhrase;
     firstTextBlock.style.color = 'white';
 
+    // var secondTextBlock = document.getElementById("secondText");
+    // secondTextBlock.style.color = 'white';
 
-    var secondTextBlock = document.getElementById("secondText");
-    secondTextBlock.style.color = 'white';
 }
-
-// onGetValuesFromStorage({ hello: 'world'})
-// onGetValuesFromStorage({ hello: 'bar'})
-
 
 
 chrome.storage.sync.get(["baseColor", "overlayColor", "likesColor"], onGetValuesFromStorage);
   //var baseColor = ;
+
+
+
+
+    // var overlayColor = "rgba(173, 138, 160, " + opacity + ")";
