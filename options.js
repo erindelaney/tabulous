@@ -1,10 +1,12 @@
 
 // Saves options to chrome.storage
 function save_options() {
-  var color = document.getElementById('color').value;
+  var baseColor = document.getElementById('firstColor').value;
+  var overlayColor = document.getElementById('secondColor').value;
   var likesColor = document.getElementById('like').checked;
   chrome.storage.sync.set({
-    favoriteColor: color,
+    baseColor: baseColor,
+    overlayColor: overlayColor,
     likesColor: likesColor
   }, function() {
     // Update status to let user know options were saved.
@@ -21,17 +23,18 @@ function save_options() {
 function restore_options() {
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get({
-    favoriteColor: 'red',
+    baseColor: 'red',
+    overlayColor: 'rgba(192, 14, 12, 1)',
     likesColor: true
   }, function(items) {
-    document.getElementById('color').value = items.favoriteColor;
+    document.getElementById('firstColor').value = items.baseColor;
+    document.getElementById('secondColor').value = items.overlayColor;
     document.getElementById('like').checked = items.likesColor;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click',
     save_options);
-
 
 
 // // Saves options to chrome.storage
