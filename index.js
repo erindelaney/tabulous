@@ -11,8 +11,16 @@ function onGetValuesFromStorage(values){
   var min = today.getMinutes();
   var currentTime = hour*100 + min;
 
-  var startTime = 0;
-  var endTime = 2360;
+  var startTime = values.startTime;
+  var endTime = values.endTime;
+
+  if (values.allDay === true) {
+    startTime = 0;
+    endTime = 2360;
+  }
+
+console.log(startTime);
+console.log(endTime);
 
   //Color Variables
   var opacity = 0;
@@ -66,7 +74,7 @@ function onGetValuesFromStorage(values){
 }
 
 
-chrome.storage.sync.get(["baseColor", "overlayColor", "likesColor"], onGetValuesFromStorage);
+chrome.storage.sync.get(["baseColor", "overlayColor", "allDay", "startTime", "endTime"], onGetValuesFromStorage);
   //var baseColor = ;
 
 

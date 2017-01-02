@@ -3,11 +3,21 @@
 function save_options() {
   var baseColor = document.getElementById('firstColor').value;
   var overlayColor = document.getElementById('secondColor').value;
-  var likesColor = document.getElementById('like').checked;
+  var allDay = document.getElementById('allDay').checked;
+  var startTime = document.getElementById('startTime').value;
+  var endTime = document.getElementById('endTime').value;
+    if (allDay === true) {
+      startTime = 'none';
+      endTime = 'none';
+      document.getElementById('startTime').value = 'none';
+      document.getElementById('endTime').value = 'none';
+    }
   chrome.storage.sync.set({
     baseColor: baseColor,
     overlayColor: overlayColor,
-    likesColor: likesColor
+    startTime: startTime,
+    endTime: endTime,
+    allDay: allDay
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -25,11 +35,15 @@ function restore_options() {
   chrome.storage.sync.get({
     baseColor: 'rgba(232, 184, 138, 1)',
     overlayColor: 'rgba(173, 138, 160, 1)',
-    likesColor: true
+    startTime: 'none',
+    endTime: 'none',
+    allDay: true
   }, function(items) {
     document.getElementById('firstColor').value = items.baseColor;
     document.getElementById('secondColor').value = items.overlayColor;
-    document.getElementById('like').checked = items.likesColor;
+    document.getElementById('allDay').checked = items.allDay;
+    document.getElementById('startTime').value = items.startTime;
+    document.getElementById('endTime').value = items.endTime;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
