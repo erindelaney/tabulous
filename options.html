@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><title>My Test Extension Options</title></head>
+<head>
+  <title>My Test Extension Options</title>
+  <link rel="stylesheet" href="optionsStyle.css">
+</head>
 <body>
-
+<h4>Life in color.</h4>
 start color:
 <select id="firstColor">
  <option value="rgba(232, 184, 138, 1)">yellow (default)</option>
@@ -19,9 +22,7 @@ end color:
 </select>
 <br>
 <br>
-Time fades.
-<br>
-<br>
+<h4>Time fades.</h4>
 start time
 <select id="startTime">
   <option value="none">-</option>
@@ -85,6 +86,13 @@ or
   <input type="checkbox" id="allDay">
   all day
 </label>
+<br>
+<h4>Words words words?</h4>
+<label>
+  <input type="checkbox" id="words">
+  yes please
+</label>
+<br>
 <br>
 <br>
 <div id="status"></div>

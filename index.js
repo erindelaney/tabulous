@@ -1,11 +1,9 @@
 
-
 function onGetValuesFromStorage(values){
 
 
-  // VARIABLES
+  // TIME
 
-  //Time Variables
   var today = new Date();
   var hour = today.getHours();
   var min = today.getMinutes();
@@ -19,10 +17,6 @@ function onGetValuesFromStorage(values){
     endTime = 2360;
   }
 
-console.log(startTime);
-console.log(endTime);
-
-  //Color Variables
   var opacity = 0;
 
   if (currentTime < startTime){
@@ -34,6 +28,8 @@ console.log(endTime);
   }
 
 
+  //COLORS
+
   var baseColor = values.baseColor || "rgba(232, 184, 138, 1)";
   var overlayColor = values.overlayColor || "rgba(173, 138, 160, 1)";
 
@@ -41,43 +37,34 @@ console.log(endTime);
   arr[3] = " " + opacity + ")";
   overlayColor = arr.join(',');
 
+  document.body.style.backgroundColor = baseColor;
 
-  //Setting background colors
-    document.body.style.backgroundColor = baseColor;
-
-    var divBackground = document.getElementById("all");
-    textArea.style.backgroundColor = overlayColor;
+  var divBackground = document.getElementById("all");
+  textArea.style.backgroundColor = overlayColor;
 
 
-  // TEXT ACTIONS
 
-  //Building text array
+  // WORDS
 
-    var firstPhraseArray = [
-      'killin it',
-      'slay slay slay slay',
-      'h e l l o   w o r l d',
-      '<(^.^<)',
-      'serial chiller'
-    ];
+  var firstPhraseArray = [
+    'killin it',
+    'slay slay slay slay',
+    'h  e  l  l  o    w  o  r  l  d',
+    '<(^.^<)',
+    'serial chiller'
+  ];
 
-    var firstPhrase = firstPhraseArray[Math.floor(Math.random() * firstPhraseArray.length)];
+  var firstPhrase = firstPhraseArray[Math.floor(Math.random() * firstPhraseArray.length)];
 
-  //Setting text properties
-    var firstTextBlock = document.getElementById("firstText");
-    firstTextBlock.innerHTML = firstPhrase;
-    firstTextBlock.style.color = 'white';
+  var firstTextBlock = document.getElementById("firstText");
+  firstTextBlock.innerHTML = firstPhrase;
+  firstTextBlock.style.color = 'white';
 
-    // var secondTextBlock = document.getElementById("secondText");
-    // secondTextBlock.style.color = 'white';
+  if (values.words === false) {
+    firstTextBlock.style.display = "none";
+  }
 
 }
 
-
-chrome.storage.sync.get(["baseColor", "overlayColor", "allDay", "startTime", "endTime"], onGetValuesFromStorage);
+chrome.storage.sync.get(["baseColor", "overlayColor", "allDay", "startTime", "endTime", "words"], onGetValuesFromStorage);
   //var baseColor = ;
-
-
-
-
-    // var overlayColor = "rgba(173, 138, 160, " + opacity + ")";
