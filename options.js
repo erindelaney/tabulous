@@ -1,4 +1,5 @@
 
+
 // SAVES OPTIONS
 
 function save_options() {
@@ -37,6 +38,7 @@ function save_options() {
 }
 
 
+
 // RESTORES OPTIONS
 
 function restore_options() {
@@ -60,6 +62,7 @@ function restore_options() {
   });
 
 }
+
 
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click',

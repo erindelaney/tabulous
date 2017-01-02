@@ -1,4 +1,5 @@
 
+
 function onGetValuesFromStorage(values){
 
 
@@ -66,5 +67,13 @@ function onGetValuesFromStorage(values){
 
 }
 
+
 chrome.storage.sync.get(["baseColor", "overlayColor", "allDay", "startTime", "endTime", "words"], onGetValuesFromStorage);
   //var baseColor = ;
+
+
+//TO DO
+// better icon
+// readme for repo
+// words input/viewing
+// colors input/picker?
