@@ -1,4 +1,4 @@
-# ![Alt](/icon16.png "tabulous")abulous
+# ![Alt](icons/icon48.png "tabulous")  Tabulous 
 
 Chrome extension which replaces your new tab with a blend of two colors based on the time. Maybe with some sassy words thrown in there as well.
 
