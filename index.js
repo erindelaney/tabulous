@@ -48,11 +48,21 @@ function onGetValuesFromStorage(values){
   // WORDS
 
   var firstPhraseArray = [
-    'killin it',
+    'this internet is killing me',
+    'slay slay slay slay',
     'slay slay slay slay',
     'h  e  l  l  o    w  o  r  l  d',
     '<(^.^<)',
-    'serial chiller'
+    'serial chiller',
+    'the snuggle is real',
+    'can i pray for u this lent',
+    'so many open windows but no fresh air',
+    'so many open windows but no fresh air',
+    '100% boys tears',
+    'where are you?',
+    'we dont need another hero.',
+    'your body is a battleground'
+
   ];
 
   var firstPhrase = firstPhraseArray[Math.floor(Math.random() * firstPhraseArray.length)];

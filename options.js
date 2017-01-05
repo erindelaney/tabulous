@@ -2,6 +2,7 @@
 
 // SAVES OPTIONS
 
+
 function save_options() {
   var baseColor = document.getElementById('firstColor').value;
   var overlayColor = document.getElementById('secondColor').value;
@@ -40,6 +41,7 @@ function save_options() {
 
 
 // RESTORES OPTIONS
+
 
 function restore_options() {
   // Defaults
