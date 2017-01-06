@@ -10,6 +10,7 @@ function save_options() {
   var startTime = document.getElementById('startTime').value;
   var endTime = document.getElementById('endTime').value;
   var words = document.getElementById('words').checked;
+  var time = document.getElementById('time').checked;
 
   if (allDay === true) {
     startTime = 'none';
@@ -18,13 +19,25 @@ function save_options() {
     document.getElementById('endTime').value = 'none';
   }
 
+  if (words === true) {
+    time = false;
+    document.getElementById('time').checked = false;
+  }
+
+  if (time === true) {
+    words = false;
+    document.getElementById('words').checked = false;
+  }
+  
+
   chrome.storage.sync.set({
     baseColor: baseColor,
     overlayColor: overlayColor,
     startTime: startTime,
     endTime: endTime,
     allDay: allDay,
-    words: words
+    words: words,
+    time: time
   },
 
   function() {
@@ -51,7 +64,8 @@ function restore_options() {
     startTime: 'none',
     endTime: 'none',
     allDay: true,
-    words: true
+    words: true,
+    time: false
   },
 
   function(items) {
@@ -59,6 +73,7 @@ function restore_options() {
     document.getElementById('secondColor').value = items.overlayColor;
     document.getElementById('allDay').checked = items.allDay;
     document.getElementById('words').checked = items.words;
+    document.getElementById('time').checked = items.time;
     document.getElementById('startTime').value = items.startTime;
     document.getElementById('endTime').value = items.endTime;
   });

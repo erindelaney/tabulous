@@ -48,42 +48,41 @@ function onGetValuesFromStorage(values){
   // WORDS
 
   var firstPhraseArray = [
-    'this internet is killing me',
     'slay slay slay slay',
     'slay slay slay slay',
     'h  e  l  l  o    w  o  r  l  d',
+    'death by internet',
     '<(^.^<)',
     'serial chiller',
     'the snuggle is real',
     'can i pray for u this lent',
     'so many open windows but no fresh air',
-    'so many open windows but no fresh air',
     '100% boys tears',
     'where are you?',
     'we dont need another hero.',
     'your body is a battleground'
-
   ];
 
   var firstPhrase = firstPhraseArray[Math.floor(Math.random() * firstPhraseArray.length)];
-
+  var theTime = " " + hour + ":" + min + " ";
   var firstTextBlock = document.getElementById("firstText");
-  firstTextBlock.innerHTML = firstPhrase;
+
+  if (values.time === true) {
+    firstTextBlock.innerHTML = theTime;
+    firstTextBlock.style.fontSize = "10rem";
+  } else {
+    firstTextBlock.innerHTML = firstPhrase;
+    if (values.words === false) {
+      firstTextBlock.style.display = "none";
+    }
+  }
+
   firstTextBlock.style.color = 'white';
 
-  if (values.words === false) {
-    firstTextBlock.style.display = "none";
-  }
+
 
 }
 
 
-chrome.storage.sync.get(["baseColor", "overlayColor", "allDay", "startTime", "endTime", "words"], onGetValuesFromStorage);
+chrome.storage.sync.get(["baseColor", "overlayColor", "allDay", "startTime", "endTime", "words", "time"], onGetValuesFromStorage);
   //var baseColor = ;
-
-
-//TO DO
-// better icon
-// readme for repo
-// words input/viewing
-// colors input/picker?
